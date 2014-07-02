@@ -44,21 +44,7 @@ public class ChangeAuthor implements CustomWorkflowAction
     */
    public Date getExecuteDate(Document aDocument)
    {
-      final String LOG_METHOD = "getExecuteDate(p_document)";      
-      boolean isLogging = LOGGER.isLoggable(LOG_LEVEL);
-      if (isLogging)
-      {
-         LOGGER.entering(LOG_CLASS, LOG_METHOD, new Object[] {});
-      }
-      
-      Date date = DATE_EXECUTE_NOW;
-      
-      if (isLogging)
-      {
-         LOGGER.exiting(LOG_CLASS, LOG_METHOD, date);
-      }
-      
-      return date;
+      return DATE_EXECUTE_NOW;
    }
 
    /**
