@@ -7,6 +7,12 @@ Build file for creating Zip Archive
 	<target name="properties">
 		<property environment="env"/>
 		<property file="build.properties" />
+      <!--
+		Set PORTALLIBS to a directory where ilwwcm-api.jar and j2ee.jar can be found
+		Linux: export PORTALLIBS=~/portal/8001libs
+		Windows: set PORTALLIBS=c:/portal/8001libs
+		-->
+		<property name="proj.classpath" 		value="${env.PORTALLIBS}/ilwwcm-api.jar:${env.PORTALLIBS}/wp.base.jar" />
 		<property name="sample.name" 			value="CustomWorkflowActions"/>
 		<property name="build.dir" 			value="build"/>
 		<property name="source.dir"     		value="src"/>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="sample.customactions.factory"
+        name="Sample Custom Workflow Action Factory"
+        version="1.0.0"
+        provider-name="IBM">
+        
+  <extension
+     point="com.ibm.workplace.wcm.api.CustomWorkflowActionFactory"
+     id="SampleCustomWorkflowActionFactory">
+     <provider class="com.ibm.wcm.sample.customactions.CustomWorkflowActionFactoryImpl"/>
+  </extension>
+ 
+</plugin>
