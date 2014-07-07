@@ -20,6 +20,7 @@ Build file for creating Zip Archive
 		<property name="zip.file"       		value="${dist.dir}/${sample.name}.zip" />
 		<property name="ear.file"       		value="${dist.dir}/${sample.name}.ear" />
 		<property name="war.file"       		value="${build.dir}/${sample.name}.war" />
+		<property name="jar.file"       		value="${build.dir}/lib/${sample.name}.jar" />
 		<property name="download.file"  		value="${dist.dir}/${sample.name}_download.zip" />
 		<property name="webcontent.dir" 		value="src/main/webapp"/>
 		<property name="documentation.dir" 	value="documentation"/>
@@ -63,14 +64,20 @@ Build file for creating Zip Archive
 		<mkdir dir="${dist.dir}"/>
 		<javac destdir="${build.dir}/main" classpath="${proj.classpath}" source="1.6" target="1.6">
          <src path="${source.dir}"/>
-  	</javac>
+  	   </javac>
+      <jar jarfile="${jar.file}" update="true">
+         <fileset dir="${build.dir}/main"/>
+         <fileset dir="${source.dir}/main/resources/" includes="**"/>
+      </jar>
+
 		<war destfile="${war.file}" webxml="${webcontent.dir}/WEB-INF/web.xml">
 		  <fileset dir="${webcontent.dir}"/>
-		  <classes dir="${build.dir}/main"/>
+        <lib dir="${build.dir}/lib/"/>
 		</war>		
+
 		<ear destfile="${ear.file}" appxml="src/main/ear/META-INF/application.xml">
-      <fileset dir="${build.dir}" includes="${sample.name}.war"/>
-    </ear>
+         <fileset dir="${build.dir}" includes="${sample.name}.war"/>
+      </ear>
 
 	</target>
 

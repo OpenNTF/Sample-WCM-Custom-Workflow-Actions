@@ -5,7 +5,7 @@
       <module id="WebModule_1">
          <web>
             <web-uri>CustomWorkflowActions.war</web-uri>
-            <context-root>/wps/wcmSamples</context-root>
+            <context-root>/wps/wcmActionSamples</context-root>
          </web>
       </module>
 </application>
