@@ -12,7 +12,7 @@ Build file for creating Zip Archive
 		Linux: export PORTALLIBS=~/portal/8001libs
 		Windows: set PORTALLIBS=c:/portal/8001libs
 		-->
-		<property name="proj.classpath" 		value="${env.PORTALLIBS}/ilwwcm-api.jar:${env.PORTALLIBS}/wp.base.jar" />
+		<property name="proj.classpath" 		value="${env.PORTALLIBS}/ilwwcm-api.jar:${env.PORTALLIBS}/wp.base.jar:${env.PORTALLIBS}/j2ee.jar" />
 		<property name="sample.name" 			value="CustomWorkflowActions"/>
 		<property name="build.dir" 			value="build"/>
 		<property name="source.dir"     		value="src"/>
@@ -61,6 +61,7 @@ Build file for creating Zip Archive
 	<!--  Used to build the installable archive. -->
 	<target name="makezips" depends="properties">
 		<mkdir dir="${build.dir}/main"/>
+		<mkdir dir="${build.dir}/lib"/>
 		<mkdir dir="${dist.dir}"/>
 		<javac destdir="${build.dir}/main" classpath="${proj.classpath}" source="1.6" target="1.6">
          <src path="${source.dir}"/>
